@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --font-bebas: "Bebas Neue";
+  --font-rajdhani: "Rajdhani";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: #111827;
+  font-family: "Rajdhani", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1219;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4a843;
+  border-radius: 3px;
+}
+
+/* Gold text stroke utility */
+.text-stroke-gold {
+  -webkit-text-stroke: 2px #d4a843;
+  color: transparent;
+}
+
+/* Opacity-0 initial state for animations */
+.animate-fade-up,
+.animate-fade-up-delay-1,
+.animate-fade-up-delay-2,
+.animate-fade-up-delay-3,
+.animate-fade-up-delay-4 {
+  opacity: 0;
+}
+
+/* Service card top bar animation */
+.service-card-bar {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.group:hover .service-card-bar {
+  transform: scaleX(1);
+}
+
+/* Nav link underline */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #d4a843;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hero grid mask */
+.hero-grid {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+}
+
+/* Shimmer on gold buttons */
+.btn-gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #d4a843 0%,
+    #f5c842 40%,
+    #ffe788 50%,
+    #f5c842 60%,
+    #d4a843 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bebas Neue", Impact, sans-serif;
+  }
+  .font-body {
+    font-family: "Rajdhani", sans-serif;
+  }
+}
