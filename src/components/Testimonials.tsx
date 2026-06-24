@@ -26,27 +26,19 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-24 px-6 lg:px-[6%] bg-white"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-[6%] bg-white"
     >
       {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-16">
-        {/* <p className="text-[#F5B800] text-xs font-bold tracking-[4px] uppercase mb-3">
-          Customer Reviews
-        </p> */}
-
-        <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] tracking-[2px] text-gray-900 leading-none">
+      <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 md:mb-14 lg:mb-16">
+        <h2 className="font-display text-[clamp(2rem,5vw,4rem)] tracking-[1px] sm:tracking-[2px] text-gray-900 leading-none">
           What Our Riders Say
         </h2>
 
-        <div className="w-14 h-[3px] bg-gradient-to-r from-[#F5B800] to-transparent rounded mx-auto my-5" />
-
-        {/* <p className="text-gray-600 text-base leading-relaxed">
-          Real feedback from customers who trust AKS Two Wheeler Works.
-        </p> */}
+        <div className="w-12 sm:w-14 h-[3px] bg-gradient-to-r from-[#F5B800] to-transparent rounded mx-auto mt-4 sm:mt-5 mb-0" />
       </div>
 
       {/* Reviews */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
         {reviews.map((r) => (
           <div
             key={r.name}
@@ -55,8 +47,8 @@ export default function Testimonials() {
               bg-[#F5B800]
               border
               border-[#E0A800]
-              rounded-2xl
-              p-7
+              rounded-xl sm:rounded-2xl
+              p-5 sm:p-6 md:p-7
               overflow-hidden
               transition-all
               duration-300
@@ -67,33 +59,33 @@ export default function Testimonials() {
             {/* Quote */}
             <span
               aria-hidden="true"
-              className="absolute top-2 right-4 text-[5rem] font-bold text-black/10"
+              className="absolute top-2 right-4 text-[4rem] sm:text-[5rem] font-bold text-black/10"
             >
               "
             </span>
 
             {/* Stars */}
-            <div className="flex gap-1 text-black text-lg mb-4">
+            <div className="flex gap-1 text-black text-base sm:text-lg mb-3 sm:mb-4">
               {"★".repeat(r.stars)}
             </div>
 
             {/* Review */}
-            <p className="text-black leading-relaxed mb-6">
+            <p className="text-black leading-relaxed text-sm sm:text-base mb-4 sm:mb-5 md:mb-6">
               {r.text}
             </p>
 
             {/* User */}
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-black text-[#F5B800] flex items-center justify-center font-bold">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black text-[#F5B800] flex items-center justify-center font-bold text-sm sm:text-base">
                 {r.initials}
               </div>
 
               <div>
-                <p className="font-bold text-black">
+                <p className="font-bold text-black text-sm sm:text-base">
                   {r.name}
                 </p>
 
-                <p className="text-sm text-gray-800">
+                <p className="text-xs sm:text-sm text-gray-800">
                   {r.vehicle}
                 </p>
               </div>
