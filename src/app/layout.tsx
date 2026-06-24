@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://yourdomain.com"), // <-- Add this
+
   title: "AKS Two Wheeler Works | Expert Bike Service – Mukkadu",
   description:
     "AKS Two Wheeler Works — Mukkadu's premium two-wheeler service centre. Engine repair, brake service, oil change, tyre replacement and more. Call 9384133530.",
@@ -40,14 +42,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-white text-gray-900 font-body antialiased">
         <Navbar />
-
-        <main className="relative">
-          {children}
-        </main>
-
+        <main className="relative">{children}</main>
         <Footer />
-
-        {/* Floating Buttons */}
         <FloatingButtons />
       </body>
     </html>
